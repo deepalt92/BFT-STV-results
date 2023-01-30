@@ -1,0 +1,86 @@
+200 votes and voters, 500 candidates, 50 committee members
+200 votes and voters, 500 candidates, 100 committee members
+200 votes and voters, 500 candidates, 200 committee members (fastest so far)
+
+
+
+500 votes and voters, 500 candidates, 200 committee members (with a network of 200 nodes)
+
+
+500 votes and voters, 400 candidates, 200 committee members (with a network of 200 nodes)
+
+
+(To achieve more scalability you can shard the voting - execute multiple elections with varying voter counts, candidates, and committee members)
+
+
+
+1000 votes, 500 candidates, 200 committee members (let's consider 200 a good committee size representing each
+country in the world, Ethereum 2.0 in comparison only has 128 validators per shard.) -- took so long, hence sharding...
+
+Break the election into 4 in the same set of nodes ------- 500/4=125, 100/4=25
+
+voting shard #1
+250 voters, 125 candidates, 50 committee members
+
+voting shard #2
+250 voters, 125 candidates, 50 committee members
+
+voting shard #3
+250 voters, 125 candidates, 50 committee members
+
+voting shard #4
+250 voters, 125 candidates, 50 committee members
+
+Merge the 50+50+50+50 = 200 committee members
+
+This is done -> It actually turned out to be 1000 voters, 500 candidates, 250 committee members 
+(maybe change this to 200 committee members for the reconfiguration because you will execute on 200 VMs/AWS instances)
+
+--------------------------------------------
+2000 voters (250 each election), 1000 candidates, 550 committee members -> 647.67 seconds = 10.79 minutes
+
+In comparison, algorands length of governance period is 3 months
+
+
+let's do 1700 TPS in the yaml, 500 committee members, 2000 voters, 1000 candidates
+
+
+
+Tezos reconfiguration is randomized
+No rotation in Cardano
+No vote in Cosmos, the validator set is selected based on the stake backing there is no democratic election.
+
+Reconfiguration -
+Tron - 6 hours , 27 validators, not bribery resistant (PBFT+DPoS)
+EoS - 63 seconds, 21 validators, not bribery resistant (BFT+DPoS)
+Cosmos - (Tendermit + DPoS)
+Polkadot - 24 hours (BFT style + NPoS) 
+Blokchains that use NPoS or DPos---
+Cosmos, Polkadot, Tron
+
+
+If you must, use sentry nodes to hide a validator -> write in discussion
+
+
+ A secure and fair election requires all the following properties:
+(1) eligibility - only eligible voters can cast ballots (2) uniqueness - no voters can cast more than one ballot 
+(3) soundness - only valid ballots should be counted 
+(4) individual and public verifiability - each voter and anyone in the public should be able to verify their vote was cast as intended and counted correctly 
+(5) bribery resistance (6) voter anonymity (7) strategic voting resistance and (8) decentralization as per many articles on electronic voting
+
+
+
+able method water goat strike patrol hen hunt cloth exercise zebra enable
+
+
+100000000000000000000000000
+
+
+
+**voting in Polkadot happens off-chain.... thus cannot use it for any blockchain
+
+
+**In EOS, each token acts as a vote. The 21 validators that gets the most votes are elected -> what is the top 21 validators are byzantine,
+
+most assume synchrony in DPoS
+it assumes asynchrony in BFT consensus - when do you decide the election is over
